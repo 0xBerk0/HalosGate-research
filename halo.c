@@ -150,7 +150,7 @@ WORD GetSSN (PBYTE NtFunction)
         {
             // upper neighbour
             Neighbour = ( NtFunction ) + (dwNtApiSize * Counter);
-            if (GetSSNInternal(NtFunction, &SSN))
+            if (GetSSNInternal(Neighbour, &SSN))
             {
                 SSN -= Counter;
                 break;
@@ -158,7 +158,7 @@ WORD GetSSN (PBYTE NtFunction)
             
             // lower neighbour
             Neighbour = ( NtFunction ) - (dwNtApiSize * Counter);
-            if (GetSSNInternal(NtFunction, &SSN)) 
+            if (GetSSNInternal(Neighbour, &SSN)) 
             {
                 SSN += Counter;
                 break;
